@@ -1,0 +1,8 @@
+experiment_name: ablation
+seed: 1
+variants:
+  - dw_ilp
+  - no_windowing
+  - no_constraint_strengthening
+  - fixed_window
+output_dir: results/raw/ablation

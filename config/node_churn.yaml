@@ -1,0 +1,5 @@
+experiment_name: node_churn
+seed: 1
+churn_lambda: 0.2
+resource_perturbation: 0.2
+output_dir: results/raw/node_churn

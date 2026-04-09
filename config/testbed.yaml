@@ -1,0 +1,4 @@
+experiment_name: testbed
+seed: 1
+deployment: docker
+output_dir: results/raw/testbed

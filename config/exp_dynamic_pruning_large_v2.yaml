@@ -1,0 +1,61 @@
+experiment_name: exp_dynamic_pruning_large_v2
+
+seeds: [1, 2, 3]
+
+simulation:
+  total_time: 100
+  num_tasks: 400
+  arrival_rate: 2.5
+
+nodes:
+  num_nodes: 20
+  compute_capacity_min: 20
+  compute_capacity_max: 80
+  bandwidth_min: 10.0
+  bandwidth_max: 50.0
+  power_coeff_min: 0.8
+  power_coeff_max: 1.5
+
+schedulers:
+  - greedy
+  - fixed_window
+  - fixed_window_pruned
+  - dynamic_window
+  - dynamic_window_pruned
+
+fixed_window:
+  window_size: 0.30
+  sort_by: deadline
+
+dynamic_window:
+  sort_by: deadline
+  min_batch_size: 2
+  max_batch_size: 5
+  min_wait: 0.04
+  max_wait: 0.22
+  slack_trigger: 0.65
+  queue_pressure_trigger: 0.15
+
+pruning:
+  prune_time_factor: 0.60
+  queue_wait_threshold: 0.15
+  enable_topk: true
+  top_k_candidates: 3
+
+task:
+  deadline_min: 0.9
+  deadline_max: 2.0
+  workload_min: 20.0
+  workload_max: 80.0
+  data_size_min: 1.0
+  data_size_max: 10.0
+
+admission:
+  edge_only: true
+  regenerate_until_feasible: true
+  max_regen_trials: 500
+  feasibility_margin: 0.7
+  local_deadline_threshold: 0.3
+
+output:
+  output_dir: results/raw/exp_dynamic_pruning_large_v2

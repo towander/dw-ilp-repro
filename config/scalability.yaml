@@ -1,0 +1,5 @@
+experiment_name: scalability
+seed: 1
+task_sizes: [100, 200, 500, 1000]
+node_sizes: [10, 20, 50, 100]
+output_dir: results/raw/scalability

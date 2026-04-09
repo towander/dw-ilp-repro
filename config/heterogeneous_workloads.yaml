@@ -1,0 +1,7 @@
+experiment_name: heterogeneous
+seed: 1
+task_types:
+  - perception
+  - planning
+  - analytics
+output_dir: results/raw/heterogeneous

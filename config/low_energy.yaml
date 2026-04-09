@@ -1,0 +1,4 @@
+experiment_name: low_energy
+seed: 1
+battery_profile: critical
+output_dir: results/raw/low_energy
